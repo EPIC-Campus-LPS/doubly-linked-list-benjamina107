@@ -1,5 +1,12 @@
 import java.util.List;
+
+/**
+ * A series of nodes connected to each other in order.
+ *
+ * @param <E> The data type being used in the list.
+ */
 public class DoublyLinkedList<E> {
+
     private int size = 0;
     private Node<E> headNode;
     private Node<E> tailNode;
@@ -160,8 +167,9 @@ public class DoublyLinkedList<E> {
     }
 
     /**
+     * Removes the item at the end of the list and makes the new end value into the tailNode.
      *
-     * @return
+     * @return The item that was just removed.
      */
     public E remove() {
         if (size == 0) {
@@ -175,6 +183,14 @@ public class DoublyLinkedList<E> {
         size--;
         return temp;
     }
+
+    /**
+     * Sets the value at the specified index to the provided value and returns what was there before.
+     *
+     * @param index The index of the list to replace.
+     * @param element The value to replace the old value with.
+     * @return The value that was previously occupying the specified index.
+     */
     public E set(int index, E element) {
         if (size == 0) {
             throw new IndexOutOfBoundsException("The list is empty.");
@@ -182,9 +198,15 @@ public class DoublyLinkedList<E> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Invalid index");
         }
-        //Just change the value
+        //Just change the value and return the old one.
         E temp = get(index); getNode(index).setData(element); return temp;
     }
+
+    /**
+     * Displays the list as a list of values separated by commas.
+     *
+     * @return The list of values.
+     */
     public String toString(){
         String s = "";
         Node<E> temp = headNode;
