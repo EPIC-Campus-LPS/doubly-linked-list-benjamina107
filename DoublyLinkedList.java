@@ -208,6 +208,9 @@ public class DoublyLinkedList<E> {
      * @return The list of values.
      */
     public String toString(){
+        if (size == 0) {
+            throw new IndexOutOfBoundsException("The list is empty.");
+        }
         String s = "";
         Node<E> temp = headNode;
         //run through the list, add each value with a comma and space to the string.
