@@ -81,7 +81,7 @@ public class DoublyLinkedList<E> {
      * @param element The element being inserted into the list.
      */
     public void add(int index, E element) {
-        if (index < 0 || index >= size) {
+        if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Invalid index");
         }
 
