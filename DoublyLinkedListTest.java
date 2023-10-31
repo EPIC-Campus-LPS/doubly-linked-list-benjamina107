@@ -88,11 +88,12 @@ class DoublyLinkedListTest {
         list.add(3);
         list.add(4);
         list.remove(0);
+        list.add(0, 3);
 
         //Get the new first and last value and add them together.
         int temp = list.remove(0) + list.remove();
 
-        assertEquals(6, temp);
+        assertEquals(7, temp);
     }
 
     @Test

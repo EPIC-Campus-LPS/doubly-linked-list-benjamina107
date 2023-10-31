@@ -92,9 +92,10 @@ public class DoublyLinkedList<E> {
             tailNode = headNode;
         } else if (index == 0) {
             //If the index specified is 0, replace the headNode and attach new headNode to old headNode.
-            Node<E> nw = new Node(element, null, headNode);
+            Node<E> nw = new Node(element, headNode, null);
             headNode.setPreviousNode(nw);
             headNode = nw;
+            headNode.setPreviousNode(null);
         } else if (index == size) {
             //If the index is specified at the end, replace the tailNode and set the previous value to old tailNode.
             Node<E> newN = new Node(element, tailNode, null);
